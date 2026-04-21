@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>散歩記録</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <button id="calendar-btn" aria-label="記録を見る">📅</button>
+
+  <div id="calendar-modal" class="hidden">
+    <div class="modal-header">
+      <h2>散歩記録</h2>
+      <button id="close-calendar-btn">×</button>
+    </div>
+    <ul id="record-list"></ul>
+  </div>
+
+  <div id="map"></div>
+
+  <div id="controls">
+    <div id="timer">00:00</div>
+    <button id="start-stop-btn" class="start">開始</button>
+  </div>
+
+  <div id="calories-info">
+    <span>15分: 約50kcal</span>
+    <span>30分: 約100kcal</span>
+    <span>45分: 約150kcal</span>
+    <span>60分: 約200kcal</span>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
