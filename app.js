@@ -84,7 +84,7 @@ startStopBtn.addEventListener('click', () => {
     // 停止
     const endTime = new Date();
     // 1分(60秒)未満は保存しない
-    if (secondsElapsed < 60) {
+    if (secondsElapsed < 10) {
       alert("1分未満の散歩は記録されません。");
       resetUI();
     } else {
